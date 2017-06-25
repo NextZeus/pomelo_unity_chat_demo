@@ -13,9 +13,10 @@ NetEase chatofpomelo
 
 * node 7.10.0 
 
-* pomelo 2.2.5 
+* pomelo 2.2.5
 
-* ubuntu 16.04
+* Unity 5.60f3
+
 
 客户端
 ===
