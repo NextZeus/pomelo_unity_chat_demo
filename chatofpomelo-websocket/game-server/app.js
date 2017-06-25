@@ -1,25 +1,26 @@
 var pomelo = require('pomelo');
+var routeUtil = require('./app/util/routeUtil');
 /**
  * Init app for client.
  */
 var app = pomelo.createApp();
-app.set('name', 'chatofpomelo-websocket');
+app.set('name', 'chatofpomelo');
 
-// app configuration
-app.configure('production|development', 'connector', function(){
-	app.set('connectorConfig',
-		{
-			connector : pomelo.connectors.hybridconnector,
-			heartbeat : 3,
-		});
-});
 
-app.configure('production|development', 'gate', function(){
-	app.set('connectorConfig',
-		{
-			connector : pomelo.connectors.hybridconnector,
-			useProtobuf : true
-		});
+// app configure
+app.configure('production|development', function() {
+	// route configures
+	app.route('chat', routeUtil.chat);
+	app.set('connectorConfig', {
+		connector: pomelo.connectors.hybridconnector,
+		transports: ['websocket', 'polling'],
+		heartbeats: true,
+		closeTimeout: 60 * 1000,
+		heartbeatTimeout: 60 * 1000,
+		heartbeatInterval: 25 * 1000
+	});
+	// filter configures
+	app.filter(pomelo.timeout());
 });
 
 // start app
