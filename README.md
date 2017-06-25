@@ -11,9 +11,9 @@ NetEase chatofpomelo
 
 服务端测试环境
 
-* node 5.8.0 
+* node 7.10.0 
 
-* pomelo 1.2.3 
+* pomelo 2.2.5 
 
 * ubuntu 16.04
 
@@ -36,14 +36,3 @@ unity3d继承pomelo的各种库文件，实现聊天功能
 
 ![](http://i.imgur.com/FkQOtvS.png)
 
-
-注
-===
-
-* 网上代码太多，但是很不友好，包括只有客户端，或只有服务端，或客户端与服务端不匹配等情况。（不过，确实要考验下自己搜索能力和Debug能力）
-
-* 文档不更新，写的很不简洁明了的
-
-* 本次代码是我网上搜到的，代码只调整了一个小地方。
-
-* 欢迎交流，myblog: http://blog.csdn.net/qq_26437925
